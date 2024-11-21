@@ -1,23 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Welcome to nginx!</title>
-<style>
-html { color-scheme: light dark ; }
-body { width: 35em; margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor ASA-DNS</title>
+    <style>
+        html {
+            color-scheme: light dark;
+        }
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
-
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
-
-<p><em>Thank you for using nginx.</em></p>
+    <h1>Bem-vindo ao servidor ASA-DNS</h1>
+    <p>Este servidor foi configurado para fornecer serviços DNS e web para o domínio <strong>asa.br</strong>.</p>
+    <p>O servidor DNS está configurado com o Bind9 e o servidor web está rodando o Nginx. Este ambiente foi configurado usando Docker.</p>
+    <p>Para mais informações sobre o projeto, visite nosso repositório no GitHub:</p>
+    <p><a href="https://github.com/britox-x/Asa-dns" target="_blank">Projeto ASA-DNS no GitHub</a></p>
+    <p>Para testar a resolução de DNS, você pode usar comandos como <code>dig</code> ou <code>nslookup</code> para verificar o funcionamento correto do servidor DNS.</p>
+    <p><em>Obrigado por usar o ASA-DNS!</em></p>
 </body>
 </html>
