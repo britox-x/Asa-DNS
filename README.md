@@ -82,4 +82,4 @@ Faça as mudanças necessárias e commit (git commit -m 'Adicionando nova funcio
 Push para o branch (git push origin minha-nova-funcionalidade).
 Abra um Pull Request.
 Licença
-Este projeto está licenciado sob a Licença MIT.
+Este projeto está licenciado sob a Licença MIT.Alteração de teste
