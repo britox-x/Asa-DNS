@@ -65,4 +65,10 @@ case $SERVICE in
         dns_service
         ;;
     web)
-      
+        web_service
+        ;;
+    *)
+        echo "Serviço inválido. Use dns ou web."
+        exit 1
+        ;;
+esac
