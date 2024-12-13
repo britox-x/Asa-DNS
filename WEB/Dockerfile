@@ -1,14 +1,14 @@
-# Base da imagem
+# Usar a imagem base do Nginx
 FROM nginx:latest
 
-# Instalar curl (necessário para o HEALTHCHECK)
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+# Copiar a configuração personalizada do Nginx para o container
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copiar o arquivo HTML para o contêiner
-COPY index.html /usr/share/nginx/html
+# Copiar arquivos de site para o diretório padrão do Nginx
+COPY ./html /usr/share/nginx/html
 
-# Ajustar permissões do arquivo
-RUN chmod 644 /usr/share/nginx/html/index.html
+# Expor a porta 80
+EXPOSE 80
 
-# Comando de saúde para verificar se o servidor está respondendo
-HEALTHCHECK CMD curl -f http://localhost/index.html || exit 1
+# Comando para iniciar o Nginx
+CMD ["nginx", "-g", "daemon off;"]
