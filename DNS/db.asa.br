@@ -1,12 +1,12 @@
-$TTL    604800
-@       IN  SOA ns.asa.br. root.asa.br. (
-                  4        ; Serial
-             604800        ; Refresh
-              86400        ; Retry
-            2419200        ; Expire
-             604800 )      ; Negative Cache TTL
-;
-@       IN  NS   ns.asa.br.
-ns      IN  A    192.168.1.67  ; Atualizado para o IP correto
-www     IN  A    192.168.1.67  ; Atualizado para o IP correto
-portal  IN  A    192.168.1.67  ; Atualizado para o IP correto
+$TTL 604800
+@       IN      SOA     ns.asa.br. root.asa.br. (
+                              1       ; Serial
+                              604800  ; Refresh
+                              86400   ; Retry
+                              2419200 ; Expire
+                              604800  ) ; Negative Cache TTL
+
+@       IN      NS      ns.asa.br.
+ns      IN      A       192.168.56.1
+@       IN      A       192.168.56.1
+www     IN      A       192.168.56.1

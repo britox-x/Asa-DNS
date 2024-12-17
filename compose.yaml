@@ -1,4 +1,5 @@
-version: '3.8'
+version: '3'
+
 services:
   dns:
     build:
@@ -7,32 +8,35 @@ services:
     container_name: dns
     ports:
       - "53:53/udp"
-    networks:
-      - app-network
 
   proxy:
-    build:
+    build: 
       context: ./proxy
       dockerfile: Dockerfile
-    container_name: nginx-proxy
+    container_name: proxy
     ports:
       - "80:80/tcp"
     depends_on:
-      - web
-      - dns
+      - asa-server
     networks:
-      - app-network
+      - asa-network
 
-  web:
+  asa-server:
     build:
-      context: ./web
+      context: ./asa-server
       dockerfile: Dockerfile
-    container_name: web
-    ports:
-      - "81:80/tcp"
+    container_name: asa-server
     networks:
-      - app-network
+      - asa-network
+
+  asa-server2:
+    build:
+      context: ./asa-server
+      dockerfile: Dockerfile
+    container_name: asa-server2
+    networks:
+      - asa-network
 
 networks:
-  app-network:
+  asa-network:
     driver: bridge
